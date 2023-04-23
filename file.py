@@ -1,13 +1,11 @@
-import click
+import sqlite3
 
+db = sqlite3.connect("test.db")
+vdb = db.cursor()
+# db.execute("CREATE TABLE people(name, year)")
+# vdb.execute("""INSERT INTO people VALUES
+#                     ('Valera', 14)""")
+# db.commit()
 
-@click.command()
-@click.option('--count', prompt="hi?", help='Number of greetings.')
-@click.option('--name', prompt='Your name', help='The person to greet.')
-def hello(count, name):
-    """Приветствует ИМЯ (`name`), несколько (`count`) раз."""
-    for x in range(int(count)):
-        click.echo(f"Hello {name}!")
-
-
-hello()
+res = vdb.execute("SELECT year FROM people")
+print(*res)
