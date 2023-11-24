@@ -6,7 +6,7 @@ from time import sleep
 # rl = ImageGrab.grab((836, 275+85, 1173, 541+125))
 # d = list(rl.getdata())
 d = [((255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 0, 0)), ((0, 255, 0), (0, 0, 255), (255, 0, 0), (255, 0, 0)), ((0, 0, 255), (255, 0, 0), (0, 255, 0), (255, 0, 0))]
-sc = numpy.array(lst, dtype=numpy.uint8)
+sc = numpy.array(d, dtype=numpy.uint8)
 sc = cv.cvtColor(sc, cv.COLOR_BGR2RGB)
 sc = cv.resize(sc, (400, 400))
 cv.imshow("new", sc)
